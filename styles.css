@@ -4,22 +4,25 @@ body {
     align-items: center;
     background-color: antiquewhite;
     margin: 0;
+    box-sizing: border-box;
 }
 .title {
     font-size: 30px;
 }
 .container {
+    width: 550px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     border: 0.5px solid black;
 }
 .line {
     display: flex;
+    flex: 1;
 }
 .block {
-    width: 27px;
-    height: 27px;
     border: 0.5px solid black;
+    flex: 1;
 }
 .colourBlock {
     background-color: aquamarine;
