@@ -1,24 +1,27 @@
 const container = document.querySelector('.container');
 
-function grid () {
-    for (let i = 0; i < 16; i++) {
+function grid (number) {
+    for (let i = 0; i < number; i++) {
         const line = document.createElement('div');
         line.classList.add('line');
-        for (let j = 0; j < 16; j++) {
+        for (let j = 0; j < number; j++) {
             const block = document.createElement('div');
             block.classList.add('block');
             line.appendChild(block);
         }
         container.appendChild(line);
     }
+    addColour();
 }
-grid();
-const blocks = document.querySelectorAll('.block');
-blocks.forEach((block) => {
-    block.addEventListener('mouseover', () => {
-        block.classList.add('colourBlock');
+function addColour () {
+    const blocks = document.querySelectorAll('.block');
+    blocks.forEach((block) => {
+        block.addEventListener('mouseover', () => {
+            block.classList.add('colourBlock');
+        });
     });
-});
+}
+grid(16);
 const button = document.querySelector('.changeNumber');
 button.addEventListener('click', () => {
     let number = prompt('How much squares per side would you want grid to have? Max 100.');
@@ -29,4 +32,8 @@ button.addEventListener('click', () => {
         }
         number = prompt('INVALID INPUT! Try again.');
     }
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    grid(number);
 });
