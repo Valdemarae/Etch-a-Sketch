@@ -18,6 +18,19 @@ function addColour () {
     blocks.forEach((block) => {
         block.addEventListener('mouseover', () => {
             block.classList.add('colourBlock');
+            block.style.backgroundColor = `aquamarine`;
+        });
+    });
+}
+function randomRgb () {
+    return Math.floor(Math.random() * 256);
+}
+function addColourRgb () {
+    const blocks = document.querySelectorAll('.block');
+    blocks.forEach((block) => {
+        block.addEventListener('mouseover', () => {
+            block.classList.add('colourBlock');
+            block.style.backgroundColor = `rgb(${randomRgb()}, ${randomRgb()}, ${randomRgb()})`;
         });
     });
 }
@@ -37,3 +50,19 @@ button.addEventListener('click', () => {
     }
     grid(number);
 });
+const clear = document.querySelector('.clear');
+clear.addEventListener('click', () => {
+    const toRemoveAll = document.querySelectorAll('.block');
+    for (toRemoveOne of toRemoveAll) {
+        if (toRemoveOne.classList.contains('colourBlock')) {
+            toRemoveOne.classList.remove('colourBlock');
+            toRemoveOne.style.backgroundColor = `antiquewhite`;
+        }
+    }
+});
+
+const rgb = document.querySelector('.rgb');
+rgb.addEventListener('click', () => addColourRgb());
+
+const aquamarine = document.querySelector('.aquamarine');
+aquamarine.addEventListener('click', () => addColour());

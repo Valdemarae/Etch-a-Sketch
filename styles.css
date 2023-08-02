@@ -10,6 +10,10 @@ body {
 .title {
     font-size: 40px;
 }
+h1 {
+    margin: 20px;
+    margin-top: 10px;
+}
 .changeNumber {
     font-size: 25px;
     margin-bottom: 40px;
@@ -20,8 +24,8 @@ body {
     cursor: pointer;
 }
 .container {
-    width: 550px;
-    height: 550px;
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     border: 0.01px dotted grey;
@@ -34,6 +38,18 @@ body {
     border: 0.01px dotted grey;
     flex: 1;
 }
-.colourBlock {
-    background-color: aquamarine;
+.clear, .rgb, .aquamarine {
+    margin: 10px;
+    font-size: 15px;
+    padding: 7px 17px;
+    background-color: brown;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.rgb > span {
+    color: rgb(238, 175, 74);
+}
+.aquamarine > span {
+    color: aquamarine;
 }
