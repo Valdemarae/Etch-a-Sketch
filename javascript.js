@@ -19,3 +19,14 @@ blocks.forEach((block) => {
         block.classList.add('colourBlock');
     });
 });
+const button = document.querySelector('.changeNumber');
+button.addEventListener('click', () => {
+    let number = prompt('How much squares per side would you want grid to have? Max 100.');
+    while (number < 1 || number > 100 || isNaN(number)) {
+        if (number == null || number == "") {
+            number = 16;
+            break;
+        }
+        number = prompt('INVALID INPUT! Try again.');
+    }
+});

@@ -5,9 +5,19 @@ body {
     background-color: antiquewhite;
     margin: 0;
     box-sizing: border-box;
+    padding-bottom: 90px;
 }
 .title {
-    font-size: 30px;
+    font-size: 40px;
+}
+.changeNumber {
+    font-size: 25px;
+    margin-bottom: 40px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
 }
 .container {
     width: 550px;
