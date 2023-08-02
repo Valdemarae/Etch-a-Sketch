@@ -13,3 +13,9 @@ function grid () {
     }
 }
 grid();
+const blocks = document.querySelectorAll('.block');
+blocks.forEach((block) => {
+    block.addEventListener('mouseover', () => {
+        block.classList.add('colourBlock');
+    });
+});
